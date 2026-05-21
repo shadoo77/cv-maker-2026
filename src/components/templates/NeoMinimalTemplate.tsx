@@ -55,7 +55,7 @@ export function NeoMinimalTemplate({
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-1 rounded-lg border border-slate-100 bg-slate-50 p-3 text-[11px] font-medium text-slate-600 md:w-auto dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400">
+        <div className="flex w-full flex-col gap-1 rounded-lg border border-slate-100 bg-slate-50 p-3 text-[11px] font-medium text-slate-600 md:w-auto dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 print:w-auto">
           <span className="flex items-center gap-1.5">
             <Phone className="h-3 w-3 text-slate-400" />{' '}
             {cvData.personalInfo.phone}
