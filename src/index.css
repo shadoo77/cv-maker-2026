@@ -1,0 +1,102 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-accent-cyan-50: #ecfeff;
+  --color-accent-cyan-100: #cffafe;
+  --color-accent-cyan-200: #a5f3fc;
+  --color-accent-cyan-300: #67e8f9;
+  --color-accent-cyan-400: #22d3ee;
+  --color-accent-cyan-500: #06b6d4;
+  --color-accent-cyan-600: #0891b2;
+  --color-accent-cyan-700: #0e7490;
+  --color-accent-cyan-800: #155e75;
+  --color-accent-cyan-900: #164e63;
+
+  --color-accent-violet-50: #f5f3ff;
+  --color-accent-violet-100: #ede9fe;
+  --color-accent-violet-200: #ddd6fe;
+  --color-accent-violet-300: #c4b5fd;
+  --color-accent-violet-400: #a78bfa;
+  --color-accent-violet-500: #8b5cf6;
+  --color-accent-violet-600: #7c3aed;
+  --color-accent-violet-700: #6d28d9;
+  --color-accent-violet-800: #5b21b6;
+  --color-accent-violet-900: #4c1d95;
+
+  --color-accent-emerald-50: #ecfdf5;
+  --color-accent-emerald-100: #d1fae5;
+  --color-accent-emerald-200: #a7f3d0;
+  --color-accent-emerald-300: #6ee7b7;
+  --color-accent-emerald-400: #34d399;
+  --color-accent-emerald-500: #10b981;
+  --color-accent-emerald-600: #059669;
+  --color-accent-emerald-700: #047857;
+  --color-accent-emerald-800: #065f46;
+  --color-accent-emerald-900: #064e3b;
+
+  --color-accent-amber-50: #fffbeb;
+  --color-accent-amber-100: #fef3c7;
+  --color-accent-amber-200: #fde68a;
+  --color-accent-amber-300: #fcd34d;
+  --color-accent-amber-400: #fbbf24;
+  --color-accent-amber-500: #f59e0b;
+  --color-accent-amber-600: #d97706;
+  --color-accent-amber-700: #b45309;
+  --color-accent-amber-800: #92400e;
+  --color-accent-amber-900: #78350f;
+
+  --color-accent-rose-50: #fff1f2;
+  --color-accent-rose-100: #ffe4e6;
+  --color-accent-rose-200: #fecdd3;
+  --color-accent-rose-300: #fda4af;
+  --color-accent-rose-400: #fb7185;
+  --color-accent-rose-500: #f43f5e;
+  --color-accent-rose-600: #e11d48;
+  --color-accent-rose-700: #be123c;
+  --color-accent-rose-800: #9f1239;
+  --color-accent-rose-900: #881337;
+
+  --color-surface-dark: #090d16;
+  --color-surface-light: #ffffff;
+  --color-text-dark: #f1f5f9;
+  --color-text-light: #0f172a;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply antialiased;
+  }
+
+  @media print {
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
+
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}
+
+@layer components {
+  .cv-sheet-container {
+    @apply min-h-[calc(100vh-8rem)];
+  }
+
+  .cv-card {
+    @apply transition-all duration-300;
+  }
+
+  .cv-dark-sidebar {
+    @apply transition-all duration-300;
+  }
+}
