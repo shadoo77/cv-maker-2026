@@ -29,6 +29,17 @@ const pageStyle = `
   }
 `;
 
-export function useCvPrint(contentRef: RefObject<HTMLDivElement | null>) {
-  return useReactToPrint({ contentRef, pageStyle });
+interface UseCvPrintOptions {
+  contentRef: RefObject<HTMLDivElement | null>;
+  darkMode: boolean;
+  documentTitle?: string;
+}
+
+export function useCvPrint({ contentRef, darkMode, documentTitle }: UseCvPrintOptions) {
+  return useReactToPrint({
+    contentRef,
+    pageStyle,
+    bodyClass: darkMode ? 'dark' : undefined,
+    documentTitle: documentTitle ?? 'CV',
+  });
 }
