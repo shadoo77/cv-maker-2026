@@ -29,7 +29,7 @@ export function NeoMinimalTemplate({
 }: NeoMinimalTemplateProps) {
   return (
     <div
-      className={`cv-card w-full max-w-[820px] rounded-2xl border border-slate-200 bg-white p-6 shadow-xl transition-all duration-300 md:p-8 dark:border-slate-800 dark:bg-slate-900 print:rounded-none print:border-none print:bg-white print:p-0 print:shadow-none ${fontClass}`}
+      className={`cv-card w-full max-w-205 rounded-2xl border border-slate-200 bg-white p-6 shadow-xl transition-all duration-300 md:p-8 dark:border-slate-800 dark:bg-slate-900 ${fontClass}`}
     >
       <div className="flex flex-col items-start justify-between gap-4 border-b border-slate-200 pb-4 md:flex-row dark:border-slate-800 print:flex-row print:border-slate-200">
         <div className="flex items-center gap-4">
@@ -41,27 +41,31 @@ export function NeoMinimalTemplate({
             size="md"
           />
           <div>
-            <h2 className="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white print:text-slate-900">
+            <h2 className="text-2xl font-extrabold tracking-tight text-slate-950 dark:text-white">
               {cvData.personalInfo.name}
             </h2>
-            <h3 className={`mt-0.5 text-xs font-black tracking-widest uppercase ${colors.primary}`}>
+            <h3
+              className={`mt-0.5 text-xs font-black tracking-widest uppercase ${colors.primary}`}
+            >
               {cvData.personalInfo.title}
             </h3>
-            <p className="mt-1 max-w-md text-[11px] text-slate-500 dark:text-slate-400 print:text-slate-600">
+            <p className="mt-1 max-w-md text-[11px] text-slate-500 dark:text-slate-400">
               {cvData.personalInfo.location}
             </p>
           </div>
         </div>
 
-        <div className="flex w-full flex-col gap-1 rounded-lg border border-slate-100 bg-slate-50 p-3 text-[11px] font-medium text-slate-600 md:w-auto dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400 print:border-none print:bg-transparent print:p-0">
+        <div className="flex w-full flex-col gap-1 rounded-lg border border-slate-100 bg-slate-50 p-3 text-[11px] font-medium text-slate-600 md:w-auto dark:border-slate-800 dark:bg-slate-950 dark:text-slate-400">
           <span className="flex items-center gap-1.5">
-            <Phone className="h-3 w-3 text-slate-400" /> {cvData.personalInfo.phone}
+            <Phone className="h-3 w-3 text-slate-400" />{' '}
+            {cvData.personalInfo.phone}
           </span>
           <span className="flex items-center gap-1.5">
-            <Mail className="h-3 w-3 text-slate-400" /> {cvData.personalInfo.email}
+            <Mail className="h-3 w-3 text-slate-400" />{' '}
+            {cvData.personalInfo.email}
           </span>
 
-          <div className="mt-1 flex flex-col gap-0.5 border-t border-slate-200 pt-1.5 dark:border-slate-800/80 print:border-slate-200">
+          <div className="mt-1 flex flex-col gap-0.5 border-t border-slate-200 pt-1.5 dark:border-slate-800/80">
             <a
               href={cvData.personalInfo.linkedin}
               target="_blank"
@@ -88,23 +92,32 @@ export function NeoMinimalTemplate({
         </div>
       </div>
 
-      <div className="border-b border-slate-200 py-3 dark:border-slate-800 print:border-slate-200">
-        <SectionHeader title="Executive Abstract" accentClass={colors.primary} />
-        <p className="text-justify text-xs leading-relaxed text-slate-700 dark:text-slate-300 print:text-slate-700">
+      <div className="border-b border-slate-200 py-3 dark:border-slate-800">
+        <SectionHeader
+          title="Executive Abstract"
+          accentClass={colors.primary}
+        />
+        <p className="text-justify text-xs leading-relaxed text-slate-700 dark:text-slate-300">
           {cvData.profile}
         </p>
       </div>
 
-      <div className="border-b border-slate-200 py-3 dark:border-slate-800 print:border-slate-200">
-        <SectionHeader title={cvData.skillsHeader} accentClass={colors.primary} />
-        <div className="grid grid-cols-1 gap-2 text-[11px] md:grid-cols-2">
+      <div className="border-b border-slate-200 py-3 dark:border-slate-800">
+        <SectionHeader
+          title={cvData.skillsHeader}
+          accentClass={colors.primary}
+        />
+        <div className="grid grid-cols-1 gap-2 text-[11px] md:grid-cols-2 print:grid-cols-2">
           {Object.entries(cvData.skills).map(([category, items]) => (
             <div
               key={category}
-              className="rounded-md border border-slate-100 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950 print:border-none print:bg-transparent print:p-0"
+              className="rounded-md border border-slate-100 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950"
             >
-              <span className="mb-1 block text-[10px] font-extrabold text-slate-800 capitalize dark:text-slate-300 print:text-slate-900">
-                {category === 'aiWorkflows' ? 'AI & Agentic Workflows' : category}:
+              <span className="mb-1 block text-[10px] font-extrabold text-slate-800 capitalize dark:text-slate-300">
+                {category === 'aiWorkflows'
+                  ? 'AI & Agentic Workflows'
+                  : category}
+                :
               </span>
               <SkillTags items={items} />
             </div>
@@ -112,8 +125,11 @@ export function NeoMinimalTemplate({
         </div>
       </div>
 
-      <div className="border-b border-slate-200 py-3 dark:border-slate-800 print:border-slate-200">
-        <SectionHeader title={cvData.experienceHeader} accentClass={colors.primary} />
+      <div className="border-b border-slate-200 py-3 dark:border-slate-800">
+        <SectionHeader
+          title={cvData.experienceHeader}
+          accentClass={colors.primary}
+        />
         <div className="space-y-3">
           {cvData.experience.slice(0, 4).map((job) => (
             <ExperienceItem
@@ -130,8 +146,11 @@ export function NeoMinimalTemplate({
       </div>
 
       <div className="py-3">
-        <SectionHeader title={cvData.educationHeader} accentClass={colors.primary} />
-        <div className="grid grid-cols-1 gap-2 md:grid-cols-3">
+        <SectionHeader
+          title={cvData.educationHeader}
+          accentClass={colors.primary}
+        />
+        <div className="grid grid-cols-1 gap-2 md:grid-cols-3 print:grid-cols-3">
           {cvData.education.map((edu) => (
             <EducationCard
               key={edu.degree + edu.year}
@@ -143,16 +162,22 @@ export function NeoMinimalTemplate({
         </div>
       </div>
 
-      <div className="grid grid-cols-2 gap-4 border-t border-slate-200 pt-3 text-[11px] dark:border-slate-800 print:border-slate-200">
+      <div className="grid grid-cols-2 gap-4 border-t border-slate-200 pt-3 text-[11px] dark:border-slate-800">
         <div>
-          <h5 className={`mb-1 font-bold ${colors.primary}`}>{cvData.languagesHeader}</h5>
-          <p className="text-slate-600 dark:text-slate-400 print:text-slate-700">
-            {cvData.languages.map((l) => `${l.lang} (${l.level.split(' / ')[0]})`).join(' • ')}
+          <h5 className={`mb-1 font-bold ${colors.primary}`}>
+            {cvData.languagesHeader}
+          </h5>
+          <p className="text-slate-600 dark:text-slate-400">
+            {cvData.languages
+              .map((l) => `${l.lang} (${l.level.split(' / ')[0]})`)
+              .join(' • ')}
           </p>
         </div>
         <div>
-          <h5 className={`mb-1 font-bold ${colors.primary}`}>{cvData.interestsHeader}</h5>
-          <p className="text-slate-600 dark:text-slate-400 print:text-slate-700">
+          <h5 className={`mb-1 font-bold ${colors.primary}`}>
+            {cvData.interestsHeader}
+          </h5>
+          <p className="text-slate-600 dark:text-slate-400">
             {cvData.interests.join(' • ')}
           </p>
         </div>

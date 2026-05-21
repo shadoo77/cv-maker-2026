@@ -28,9 +28,9 @@ export function DarkTechTemplate({
 }: DarkTechTemplateProps) {
   return (
     <div
-      className={`cv-card flex w-full max-w-[820px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl transition-all duration-300 md:flex-row dark:border-slate-800 dark:bg-slate-950 print:border-none print:bg-white print:shadow-none ${fontClass}`}
+      className={`cv-card flex w-full max-w-[820px] flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl transition-all duration-300 md:flex-row dark:border-slate-800 dark:bg-slate-950 print:flex-row print:shadow-none ${fontClass}`}
     >
-      <div className="cv-dark-sidebar flex w-full flex-col justify-between border-r border-slate-200 bg-slate-50 p-6 md:w-1/3 dark:border-slate-800 dark:bg-slate-900 print:border-slate-200 print:bg-slate-50">
+      <div className="cv-dark-sidebar flex w-full flex-col justify-between border-r border-slate-200 bg-slate-50 p-6 md:w-1/3 dark:border-slate-800 dark:bg-slate-900 print:w-1/3">
         <div>
           <div className="mb-4 flex flex-col items-center text-center">
             <ProfileImage
@@ -40,7 +40,7 @@ export function DarkTechTemplate({
               shape="rounded-full"
               size="sm"
             />
-            <h2 className="text-base font-black tracking-wide text-slate-950 dark:text-white print:text-slate-900">
+            <h2 className="text-base font-black tracking-wide text-slate-950 dark:text-white">
               {cvData.personalInfo.name}
             </h2>
             <p className="mt-0.5 text-[10px] text-slate-500 dark:text-slate-400">
@@ -48,26 +48,26 @@ export function DarkTechTemplate({
             </p>
           </div>
 
-          <div className="mb-6 space-y-2.5 border-t border-slate-200 pt-4 text-[11px] dark:border-slate-800 print:border-slate-200">
-            <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white print:text-slate-800">
+            <div className="mb-6 space-y-2.5 border-t border-slate-200 pt-4 text-[11px] dark:border-slate-800">
+              <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white">
               Connection Nodes
             </h3>
 
-            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 print:text-slate-700">
+            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
               <MapPin className="h-3 w-3 flex-shrink-0 text-slate-400" />
               <span>{cvData.personalInfo.location}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 print:text-slate-700">
+            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
               <Phone className="h-3 w-3 flex-shrink-0 text-slate-400" />
               <span>{cvData.personalInfo.phone}</span>
             </div>
-            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 print:text-slate-700">
+            <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
               <Mail className="h-3 w-3 flex-shrink-0 text-slate-400" />
               <span className="truncate">{cvData.personalInfo.email}</span>
             </div>
 
-            <div className="flex flex-col gap-1.5 border-t border-slate-200 pt-2 dark:border-slate-800 print:border-slate-200">
-              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 print:text-slate-700">
+            <div className="flex flex-col gap-1.5 border-t border-slate-200 pt-2 dark:border-slate-800">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                 <LinkedinIcon className="h-3 w-3 flex-shrink-0 text-cyan-500 dark:text-cyan-400" />
                 <a
                   href={cvData.personalInfo.linkedin}
@@ -78,7 +78,7 @@ export function DarkTechTemplate({
                   {cvData.personalInfo.linkedinUsername}
                 </a>
               </div>
-              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400 print:text-slate-700">
+              <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
                 <GithubIcon className="h-3 w-3 flex-shrink-0 text-slate-500 dark:text-slate-400" />
                 <a
                   href={cvData.personalInfo.github}
@@ -92,8 +92,8 @@ export function DarkTechTemplate({
             </div>
           </div>
 
-          <div className="space-y-4 border-t border-slate-200 pt-4 dark:border-slate-800 print:border-slate-200">
-            <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white print:text-slate-800">
+            <div className="space-y-4 border-t border-slate-200 pt-4 dark:border-slate-800">
+              <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white">
               Stack Architecture
             </h3>
 
@@ -124,10 +124,10 @@ export function DarkTechTemplate({
         </div>
       </div>
 
-      <div className="w-full bg-white p-6 md:w-2/3 md:p-8 dark:bg-slate-950/40 print:w-2/3 print:bg-white">
+      <div className="w-full bg-white p-6 md:w-2/3 md:p-8 dark:bg-slate-950/40 print:w-2/3">
         <section className="mb-4">
           <SectionHeader title="System Overview" accentClass={colors.primary} />
-          <p className="text-justify text-xs leading-relaxed text-slate-700 dark:text-slate-300 print:text-slate-700">
+          <p className="text-justify text-xs leading-relaxed text-slate-700 dark:text-slate-300">
             {cvData.profile}
           </p>
         </section>
@@ -148,7 +148,7 @@ export function DarkTechTemplate({
           </div>
         </section>
 
-        <section className="border-t border-slate-200 pt-4 dark:border-slate-800 print:border-slate-200">
+        <section className="border-t border-slate-200 pt-4 dark:border-slate-800">
           <SectionHeader title={cvData.educationHeader} accentClass={colors.primary} />
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {cvData.education.slice(0, 2).map((edu) => (
@@ -156,7 +156,7 @@ export function DarkTechTemplate({
                 <span className="text-[9px] font-bold text-slate-400 dark:text-slate-500">
                   {edu.year}
                 </span>
-                <h4 className="text-[11px] font-bold text-slate-950 dark:text-white print:text-slate-900">
+                <h4 className="text-[11px] font-bold text-slate-950 dark:text-white">
                   {edu.degree}
                 </h4>
                 <p className="text-[10px] text-slate-500">{edu.institution}</p>

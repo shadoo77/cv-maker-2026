@@ -24,22 +24,24 @@ export function ExperienceItem({
     <>
       <div className="mb-0.5 flex flex-wrap items-start justify-between gap-1">
         <div>
-          <h5 className="text-xs font-bold text-slate-950 dark:text-white print:text-slate-900">
+          <h5 className="text-xs font-bold text-slate-950 dark:text-white">
             {role}
           </h5>
-          <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400 print:text-slate-600">
+          <p className="text-[10px] font-bold text-slate-500 dark:text-slate-400">
             {company}
           </p>
         </div>
-        <span className="rounded border border-slate-100 bg-slate-50 px-1.5 py-0.5 text-[10px] font-bold text-slate-500 dark:border-slate-800 dark:bg-slate-950 print:border-slate-200 print:bg-slate-100 print:text-slate-700">
+        <span className="rounded border border-slate-100 bg-slate-50 px-1.5 py-0.5 text-[10px] font-bold text-slate-500 dark:border-slate-800 dark:bg-slate-950">
           {duration}
         </span>
       </div>
       <ul className="mt-1 list-none space-y-0.5 text-[11px] text-slate-600 dark:text-slate-400">
         {bullets.map((bullet, bIdx) => (
           <li key={bIdx} className="flex items-start gap-1.5 leading-relaxed">
-            <span className={`mt-1.5 h-1 w-1 flex-shrink-0 rounded-full ${accentBgClass}`} />
-            <span className="text-slate-700 dark:text-slate-300 print:text-slate-700">
+            <span
+              className={`mt-1.5 h-1 w-1 shrink-0 rounded-full ${accentBgClass}`}
+            />
+            <span className="text-slate-700 dark:text-slate-300">
               {bullet}
             </span>
           </li>
@@ -49,8 +51,8 @@ export function ExperienceItem({
   );
 
   const baseClassName = isTimeline
-    ? 'relative border-l border-slate-200 pl-3 transition-colors hover:border-cyan-500 dark:border-slate-800 dark:hover:border-cyan-400 print:border-slate-200'
-    : 'border-l border-slate-200 pl-3 transition-colors hover:border-cyan-400 dark:border-slate-800 print:border-slate-200';
+    ? 'relative border-l border-slate-200 pl-3 transition-colors hover:border-cyan-500 dark:border-slate-800 dark:hover:border-cyan-400'
+    : 'border-l border-slate-200 pl-3 transition-colors hover:border-cyan-400 dark:border-slate-800';
 
   return (
     <div className={cn(baseClassName, className)} {...props}>

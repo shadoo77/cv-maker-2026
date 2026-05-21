@@ -23,10 +23,10 @@ export function EducationCard({
           {year}
         </span>
         <div>
-          <h5 className="mt-0.5 text-[11px] font-bold text-slate-900 dark:text-white print:text-slate-900">
+          <h5 className="mt-0.5 text-[11px] font-bold text-slate-900 dark:text-white">
             {degree}
           </h5>
-          <p className="mt-0.5 text-[10px] font-medium text-slate-600 dark:text-slate-400 print:text-slate-600">
+          <p className="mt-0.5 text-[10px] font-medium text-slate-600 dark:text-slate-400">
             {institution}
           </p>
         </div>
@@ -37,16 +37,16 @@ export function EducationCard({
   return (
     <div
       className={cn(
-        'rounded-md border border-slate-100 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950 print:border-none print:bg-transparent print:p-0',
+        'rounded-md border border-slate-100 bg-slate-50 p-2 dark:border-slate-800 dark:bg-slate-950',
         className,
       )}
       {...props}
     >
       <span className="block text-[9px] font-bold text-slate-400 dark:text-slate-500">{year}</span>
-      <h5 className="mt-0.5 text-[11px] font-bold text-slate-900 dark:text-white print:text-slate-900">
+      <h5 className="mt-0.5 text-[11px] font-bold text-slate-900 dark:text-white">
         {degree}
       </h5>
-      <p className="mt-0.5 text-[10px] font-medium text-slate-600 dark:text-slate-400 print:text-slate-600">
+      <p className="mt-0.5 text-[10px] font-medium text-slate-600 dark:text-slate-400">
         {institution}
       </p>
     </div>

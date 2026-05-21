@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import { cvDataTranslations } from '@/data/cvData';
 import { colorMap } from '@/utils/colorMap';
 import { ControlPanel } from '@/components/ControlPanel';
@@ -24,17 +24,11 @@ export default function App() {
   const [profileImage, setProfileImage] = useState<string | null>(null);
   const [darkMode, setDarkMode] = useState(true);
 
-  const contentRef = useRef<HTMLDivElement>(null);
-
   const cvData = cvDataTranslations[cvLanguage];
   const activeColors = colorMap[accentColor];
   const fontClass = fontClasses[fontFamily];
 
-  const triggerPrint = useCvPrint({
-    contentRef,
-    darkMode,
-    documentTitle: `${cvData.personalInfo.name} - CV`,
-  });
+  const triggerPrint = useCvPrint();
 
   const handleImageChange = useCallback((url: string) => {
     setProfileImage(url);
@@ -94,7 +88,7 @@ export default function App() {
       </div>
 
       <main className="cv-sheet-container flex grow justify-center px-4 py-6 print:p-0">
-        <div ref={contentRef} className={`cv-container-print ${darkMode ? 'dark' : ''}`}>
+        <div className="cv-container-print">
           {renderTemplate()}
         </div>
       </main>

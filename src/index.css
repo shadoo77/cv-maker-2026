@@ -73,18 +73,6 @@
   body {
     @apply antialiased;
   }
-
-  @media print {
-    @page {
-      size: A4 portrait;
-      margin: 0;
-    }
-
-    body {
-      -webkit-print-color-adjust: exact;
-      print-color-adjust: exact;
-    }
-  }
 }
 
 @layer components {
@@ -98,5 +86,87 @@
 
   .cv-dark-sidebar {
     @apply transition-all duration-300;
+  }
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html, body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Hide control panel and banner */
+  header {
+    display: none !important;
+  }
+
+  [class*="print:hidden"] {
+    display: none !important;
+  }
+
+  /* Reset main container */
+  .cv-sheet-container {
+    min-height: auto !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* CV container */
+  .cv-container-print {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 15mm !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Preserve theme colors - remove forced light mode */
+
+  /* Force grid layouts in print */
+  .cv-card .grid {
+    display: grid !important;
+  }
+
+  .cv-card .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .cv-card .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  }
+
+  /* Force flex row layout for DarkTech sidebar */
+  .cv-card.flex-col {
+    flex-direction: row !important;
+  }
+
+  .cv-dark-sidebar {
+    width: 33.333333% !important;
+  }
+
+  .cv-dark-sidebar + div {
+    width: 66.666667% !important;
+  }
+
+  /* Remove hover effects */
+  .cv-card *:hover {
+    border-color: inherit !important;
+  }
+
+  /* Remove transitions */
+  .cv-card * {
+    transition: none !important;
+  }
+
+  /* SVG icons */
+  svg {
+    filter: none !important;
   }
 }
