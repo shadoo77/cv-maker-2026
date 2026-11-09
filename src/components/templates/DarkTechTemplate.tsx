@@ -48,9 +48,9 @@ export function DarkTechTemplate({
             </p>
           </div>
 
-            <div className="mb-6 space-y-2.5 border-t border-slate-200 pt-4 text-[11px] dark:border-slate-800">
-              <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white">
-              Connection Nodes
+          <div className="mb-6 space-y-2.5 border-t border-slate-200 pt-4 text-[11px] dark:border-slate-800">
+            <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white">
+              Contact
             </h3>
 
             <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
@@ -92,20 +92,10 @@ export function DarkTechTemplate({
             </div>
           </div>
 
-            <div className="space-y-4 border-t border-slate-200 pt-4 dark:border-slate-800">
-              <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white">
-              Stack Architecture
+          <div className="space-y-4 border-t border-slate-200 pt-4 dark:border-slate-800">
+            <h3 className="text-[9px] font-black tracking-widest text-slate-900 uppercase dark:text-white">
+              Skills
             </h3>
-
-            <div>
-              <h4 className="mb-1 text-[10px] font-bold text-slate-950 dark:text-white">
-                AI & Agentic
-              </h4>
-              <SkillTags
-                items={cvData.skills.aiWorkflows}
-                className="border-slate-200 bg-white px-1.5 py-0.5 font-mono text-[9px] text-cyan-600 dark:border-slate-800 dark:bg-slate-950 dark:text-cyan-400"
-              />
-            </div>
 
             <div>
               <h4 className="mb-1 text-[10px] font-bold text-slate-950 dark:text-white">
@@ -120,22 +110,35 @@ export function DarkTechTemplate({
               </h4>
               <SkillTags items={cvData.skills.frontend} />
             </div>
+
+            <div>
+              <h4 className="mb-1 text-[10px] font-bold text-slate-950 dark:text-white">
+                AI & Agentic
+              </h4>
+              <SkillTags
+                items={cvData.skills.aiWorkflows}
+                className="border-slate-200 bg-white px-1.5 py-0.5 font-mono text-[9px] text-cyan-600 dark:border-slate-800 dark:bg-slate-950 dark:text-cyan-400"
+              />
+            </div>
           </div>
         </div>
       </div>
 
       <div className="w-full bg-white p-6 md:w-2/3 md:p-8 dark:bg-slate-950/40 print:w-2/3">
         <section className="mb-4">
-          <SectionHeader title="System Overview" accentClass={colors.primary} />
+          <SectionHeader title="Summary" accentClass={colors.primary} />
           <p className="text-justify text-xs leading-relaxed text-slate-700 dark:text-slate-300">
             {cvData.profile}
           </p>
         </section>
 
         <section className="mb-4">
-          <SectionHeader title={cvData.experienceHeader} accentClass={colors.primary} />
+          <SectionHeader
+            title={cvData.experienceHeader}
+            accentClass={colors.primary}
+          />
           <div className="space-y-4">
-            {cvData.experience.slice(0, 4).map((job) => (
+            {cvData.experience.slice(0, 4).map((job, index, jobs) => (
               <ExperienceItem
                 key={job.company + job.duration}
                 role={job.role}
@@ -143,13 +146,21 @@ export function DarkTechTemplate({
                 duration={job.duration}
                 bullets={job.bullets}
                 accentBgClass={colors.bg}
+                groupHeader={
+                  job.group && job.group !== jobs[index - 1]?.group
+                    ? job.group
+                    : undefined
+                }
               />
             ))}
           </div>
         </section>
 
         <section className="border-t border-slate-200 pt-4 dark:border-slate-800">
-          <SectionHeader title={cvData.educationHeader} accentClass={colors.primary} />
+          <SectionHeader
+            title={cvData.educationHeader}
+            accentClass={colors.primary}
+          />
           <div className="grid grid-cols-1 gap-3 md:grid-cols-2">
             {cvData.education.slice(0, 2).map((edu) => (
               <div key={edu.degree + edu.year} className="text-xs">

@@ -6,6 +6,7 @@ import {
   NeoMinimalTemplate,
   DarkTechTemplate,
   CreativeGlassTemplate,
+  AtsTemplate,
 } from '@/components/templates';
 import { useCvPrint } from '@/hooks/usePrint';
 import type { AccentColor, Template, FontFamily } from '@/types/cv';
@@ -59,6 +60,8 @@ export default function App() {
         return <DarkTechTemplate {...templateProps} />;
       case 'creative-glass':
         return <CreativeGlassTemplate {...templateProps} />;
+      case 'ats':
+        return <AtsTemplate {...templateProps} />;
     }
   };
 

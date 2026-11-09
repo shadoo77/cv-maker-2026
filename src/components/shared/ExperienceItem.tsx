@@ -8,6 +8,7 @@ type ExperienceItemProps = ComponentPropsWithoutRef<'div'> & {
   bullets: string[];
   accentBgClass: string;
   isTimeline?: boolean;
+  groupHeader?: string;
 };
 
 export function ExperienceItem({
@@ -17,11 +18,17 @@ export function ExperienceItem({
   bullets,
   accentBgClass,
   isTimeline = false,
+  groupHeader,
   className,
   ...props
 }: ExperienceItemProps) {
   const content = (
     <>
+      {groupHeader && (
+        <p className="mb-1.5 text-[9px] font-black tracking-widest text-slate-400 uppercase dark:text-slate-500">
+          {groupHeader}
+        </p>
+      )}
       <div className="mb-0.5 flex flex-wrap items-start justify-between gap-1">
         <div>
           <h5 className="text-xs font-bold text-slate-950 dark:text-white">
@@ -41,9 +48,7 @@ export function ExperienceItem({
             <span
               className={`mt-1.5 h-1 w-1 shrink-0 rounded-full ${accentBgClass}`}
             />
-            <span className="text-slate-700 dark:text-slate-300">
-              {bullet}
-            </span>
+            <span className="text-slate-700 dark:text-slate-300">{bullet}</span>
           </li>
         ))}
       </ul>

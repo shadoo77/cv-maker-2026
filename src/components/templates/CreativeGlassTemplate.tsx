@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import { MapPin, Phone, Mail, GraduationCap } from 'lucide-react';
 import type { CvData, ColorClasses } from '@/types/cv';
 import {
@@ -40,8 +41,10 @@ export function CreativeGlassTemplate({
           size="sm"
         />
 
-        <span className={`text-[9px] font-black tracking-widest uppercase ${colors.primary}`}>
-          Professional Portfolio
+        <span
+          className={`text-[9px] font-black tracking-widest uppercase ${colors.primary}`}
+        >
+          Curriculum Vitae
         </span>
         <h2 className="mt-1 text-3xl font-extrabold text-slate-950 dark:text-white">
           {cvData.personalInfo.name}
@@ -79,46 +82,58 @@ export function CreativeGlassTemplate({
       </div>
 
       <div className="py-4">
-        <SectionHeader title="Career Narrative" accentClass={colors.primary} />
+        <SectionHeader title="Experience" accentClass={colors.primary} />
 
         <div className="relative space-y-4 before:absolute before:inset-y-0 before:left-3 before:w-0.5 before:bg-slate-200 dark:before:bg-slate-800">
-          {cvData.experience.slice(0, 4).map((job) => (
-            <div key={job.company + job.duration} className="group relative pl-8">
-              <div
-                className={`absolute top-1 left-1.5 h-2.5 w-2.5 rounded-full border-2 border-white dark:border-slate-950 ${colors.bg} transition-transform group-hover:scale-125`}
-              />
+          {cvData.experience.slice(0, 4).map((job, index, jobs) => (
+            <Fragment key={job.company + job.duration}>
+              {job.group && job.group !== jobs[index - 1]?.group && (
+                <p className="text-[9px] font-black tracking-widest text-slate-400 uppercase dark:text-slate-500">
+                  {job.group}
+                </p>
+              )}
+              <div className="group relative pl-8">
+                <div
+                  className={`absolute top-1 left-1.5 h-2.5 w-2.5 rounded-full border-2 border-white dark:border-slate-950 ${colors.bg} transition-transform group-hover:scale-125`}
+                />
 
-              <div className="mb-1 flex flex-col justify-between gap-1 md:flex-row md:items-center">
-                <div>
-                  <span className="block text-[9px] font-bold tracking-widest text-slate-400 uppercase dark:text-slate-500">
-                    {job.duration}
-                  </span>
-                  <h4 className="inline-block text-xs font-bold text-slate-950 dark:text-white">
-                    {job.role}
-                  </h4>
-                  <span className="px-1.5 text-xs text-slate-400">•</span>
-                  <span className={`text-[11px] font-bold ${colors.primary}`}>{job.company}</span>
+                <div className="mb-1 flex flex-col justify-between gap-1 md:flex-row md:items-center">
+                  <div>
+                    <span className="block text-[9px] font-bold tracking-widest text-slate-400 uppercase dark:text-slate-500">
+                      {job.duration}
+                    </span>
+                    <h4 className="inline-block text-xs font-bold text-slate-950 dark:text-white">
+                      {job.role}
+                    </h4>
+                    <span className="px-1.5 text-xs text-slate-400">•</span>
+                    <span className={`text-[11px] font-bold ${colors.primary}`}>
+                      {job.company}
+                    </span>
+                  </div>
                 </div>
-              </div>
 
-              <ul className="list-inside list-disc space-y-0.5 pl-1 text-[11px] text-slate-600 dark:text-slate-400">
-                {job.bullets.map((bullet, bIdx) => (
-                  <li
-                    key={bIdx}
-                    className="leading-relaxed text-slate-700 dark:text-slate-300"
-                  >
-                    {bullet}
-                  </li>
-                ))}
-              </ul>
-            </div>
+                <ul className="list-inside list-disc space-y-0.5 pl-1 text-[11px] text-slate-600 dark:text-slate-400">
+                  {job.bullets.map((bullet, bIdx) => (
+                    <li
+                      key={bIdx}
+                      className="leading-relaxed text-slate-700 dark:text-slate-300"
+                    >
+                      {bullet}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Fragment>
           ))}
         </div>
       </div>
 
       <div className="grid grid-cols-1 gap-6 border-t border-slate-200 pt-4 md:grid-cols-2 dark:border-slate-800 print:grid-cols-2">
         <div>
-          <SectionHeader title={cvData.educationHeader} accentClass={colors.primary} />
+          <SectionHeader
+            title={cvData.educationHeader}
+            accentClass={colors.primary}
+          />
           <div className="space-y-3">
             {cvData.education.slice(0, 2).map((edu) => (
               <div key={edu.degree + edu.year} className="flex gap-2">
@@ -137,7 +152,10 @@ export function CreativeGlassTemplate({
         </div>
 
         <div>
-          <SectionHeader title="Communication & Personal" accentClass={colors.primary} />
+          <SectionHeader
+            title="Languages & Tools"
+            accentClass={colors.primary}
+          />
 
           <div className="mb-3">
             <h4 className="mb-1 text-[9px] font-bold tracking-wider text-slate-400 uppercase dark:text-slate-500">
@@ -155,7 +173,10 @@ export function CreativeGlassTemplate({
             </h4>
             <div className="flex flex-col gap-0.5">
               {cvData.languages.map((l) => (
-                <div key={l.lang} className="flex items-center justify-between text-[11px]">
+                <div
+                  key={l.lang}
+                  className="flex items-center justify-between text-[11px]"
+                >
                   <span className="font-bold text-slate-700 dark:text-slate-300">
                     {l.lang}
                   </span>

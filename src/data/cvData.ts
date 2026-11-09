@@ -1,5 +1,8 @@
 import type { CvData } from '../types/cv';
 
+// NOTE: Only verifiable figures belong here. The 40% delivery metric and the
+// 4-year tenure are real; add more scope numbers (projects, components,
+// team size, traffic/conversion deltas) only when you can defend them.
 export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
   en: {
     personalInfo: {
@@ -12,10 +15,11 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
       linkedinUsername: 'shadi-amr',
       github: 'https://github.com/shadoo77',
       githubUsername: 'shadoo77',
+      portfolio: '',
     },
     profile:
-      'Dynamic Senior Web Developer with nearly 7 years of expertise in JavaScript and a deep specialization in the modern React ecosystem. Proven track record of architecting high-performance frontend solutions using Next.js, TypeScript, and Tailwind CSS. Adept at bridging the gap between pixel-perfect design and complex functionality, while leveraging cutting-edge AI-assisted engineering (including Claude Code, OpenCode, and LLMs) to exponentially accelerate feature delivery and ensure exceptional code reliability.',
-    skillsHeader: 'Technical Infrastructure',
+      'Frontend and full-stack developer with 6+ years building React and Next.js products. At This is Development I own frontend architecture for client platforms built on Next.js, TypeScript and Tailwind, with Laravel/Inertia back ends. I introduced AI-assisted workflows that cut feature delivery time by roughly 40%, and led technical SEO and performance work that improved organic visibility and conversion. I work end-to-end from design handoff to production and own the technical decisions that keep those platforms fast and maintainable.',
+    skillsHeader: 'Skills',
     skills: {
       languages: [
         'JavaScript (7 yrs)',
@@ -26,7 +30,7 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
       ],
       frontend: [
         'React (7 yrs)',
-        'Next.js (almost 6 yrs)',
+        'Next.js (5+ yrs)',
         'Redux Toolkit',
         'Material-UI',
         'Tailwind CSS',
@@ -49,36 +53,38 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
         'Cypress E2E Testing',
       ],
     },
-    experienceHeader: 'Professional Experience',
+    experienceHeader: 'Experience',
     experience: [
       {
-        company: 'This Development',
+        company: 'This is Development B.V.',
         role: 'Frontend Developer',
         duration: 'Oct 2022 - Present',
-        location: 'Netherlands',
+        location: 'Utrecht, NL',
         bullets: [
-          'Architected Next.js, Vite, and Tailwind CSS web apps to guarantee exceptional client-side performance.',
-          'Integrated Laravel and Inertia.js to seamlessly deliver robust, unified full-stack solutions.',
-          'Drove search visibility and conversion rates by leading technical SEO and performance audits.',
-          'Utilized AI-assisted workflows (Claude Code & LLMs) to accelerate feature delivery by 40%.',
+          'Own frontend architecture for client platforms in Next.js, Vite and Tailwind, and set the component and code-review standards the team follows.',
+          'Deliver full-stack features by integrating Laravel and Inertia.js into a single React codebase.',
+          'Led technical SEO and performance audits that improved organic visibility and conversion.',
+          'Introduced AI-assisted workflows (Claude Code, LLMs) that cut feature delivery time by roughly 40%.',
         ],
       },
       {
-        company: 'Gofilex Investments B.V.',
+        company: 'Gofilex Film B.V.',
         role: 'Frontend Developer',
         duration: 'Mar 2022 - Sep 2022',
         location: 'Zeist, NL',
+        group: 'Fixed-term roles · 2021–2022',
         bullets: [
-          'Modernized proprietary media platform updating legacy React and modular Sass-CSS elements to increase speed.',
+          'Rebuilt legacy React components and modular Sass into a faster, more maintainable media delivery platform.',
         ],
       },
       {
-        company: '4NET',
+        company: '4net Interactive (Conclusion)',
         role: 'Frontend Developer',
         duration: 'Nov 2021 - Mar 2022',
-        location: 'Driebergen-Zeist, NL',
+        location: 'Driebergen-Rijsenburg, NL',
+        group: 'Fixed-term roles · 2021–2022',
         bullets: [
-          'Developed complex React interfaces and responsive design libraries with Material-UI adhering to WCAG compliance.',
+          'Built complex React interfaces and a reusable Material-UI component library to WCAG accessibility standards.',
         ],
       },
       {
@@ -87,11 +93,11 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
         duration: 'Apr 2020 - Nov 2021',
         location: 'Amsterdam, NL',
         bullets: [
-          'Scaled social commerce platform with React/Next.js and engineered Node.js/TypeScript REST APIs and microservices.',
+          'Scaled a social-commerce platform with React/Next.js and built Node.js/TypeScript REST APIs and microservices.',
         ],
       },
     ],
-    educationHeader: 'Education & Credentials',
+    educationHeader: 'Education',
     education: [
       {
         degree: 'Web Development Immersion',
@@ -137,10 +143,11 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
       linkedinUsername: 'shadi-amr',
       github: 'https://github.com/shadoo77',
       githubUsername: 'shadoo77',
+      portfolio: '',
     },
     profile:
-      "Dynamische Senior Web Developer met bijna 7 jaar expertise in JavaScript en een diepe specialisatie in het moderne React-ecosysteem. Bewezen staat van dienst in het ontwerpen van krachtige frontend-oplossingen met Next.js, TypeScript en Tailwind CSS. Ervaren in het overbruggen van de kloof tussen pixel-perfect design en complexe functionaliteit, met actieve inzet van geavanceerde AI-gestuurde engineering (waaronder Claude Code, OpenCode en LLM's) om featurereleases aanzienlijk te versnellen en uitzonderlijke code-betrouwbaarheid te garanderen.",
-    skillsHeader: 'Technische Expertise',
+      'Frontend- en full-stack developer met 6+ jaar ervaring in React en Next.js. Bij This is Development ben ik verantwoordelijk voor de frontend-architectuur van klantplatformen op Next.js, TypeScript en Tailwind, met Laravel/Inertia back-ends. Ik introduceerde AI-ondersteunde workflows die de featurelevertijd met circa 40% verkortten, en leidde technische SEO- en performance-trajecten die de organische zichtbaarheid en conversie verbeterden. Ik werk end-to-end van designoplevering tot productie en neem de technische beslissingen die deze platformen snel en onderhoudbaar houden.',
+    skillsHeader: 'Vaardigheden',
     skills: {
       languages: [
         'JavaScript (7 jr)',
@@ -151,7 +158,7 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
       ],
       frontend: [
         'React (7 jr)',
-        'Next.js (bijna 6 jr)',
+        'Next.js (5+ jr)',
         'Redux Toolkit',
         'Material-UI',
         'Tailwind CSS',
@@ -177,33 +184,35 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
     experienceHeader: 'Werkervaring',
     experience: [
       {
-        company: 'This Development',
+        company: 'This is Development B.V.',
         role: 'Frontend Developer',
         duration: 'okt 2022 - heden',
-        location: 'Nederland',
+        location: 'Utrecht, NL',
         bullets: [
-          'Ontwierp Next.js, Vite en Tailwind CSS webapps om uitstekende client-side prestaties te garanderen.',
-          'Integreerde Laravel en Inertia.js om naadloos robuuste full-stack oplossingen te leveren.',
-          "Verhoogde de organische zoekzichtbaarheid en conversieratio's door technische SEO-audits.",
-          "Maakte gebruik van AI-workflows (Claude Code & LLM's) om feature releases met 40% te versnellen.",
+          'Verantwoordelijk voor de frontend-architectuur van klantplatformen in Next.js, Vite en Tailwind; stelt de component- en code review-standaarden voor het team vast.',
+          'Levert full-stack features door Laravel en Inertia.js te integreren in één React-codebase.',
+          'Leidde technische SEO- en performance-audits die de organische zichtbaarheid en conversie verbeterden.',
+          "Introduceerde AI-ondersteunde workflows (Claude Code, LLM's) die de featurelevertijd met circa 40% verkortten.",
         ],
       },
       {
-        company: 'Gofilex Investments B.V.',
+        company: 'Gofilex Film B.V.',
         role: 'Frontend Developer',
         duration: 'mrt 2022 - sep 2022',
         location: 'Zeist, NL',
+        group: 'Tijdelijke contracten · 2021–2022',
         bullets: [
-          'Moderniseerde mediaplatform van Gofilex, updaten van legacy React en modulaire Sass-CSS.',
+          'Herschreef legacy React-componenten en modulaire Sass tot een sneller en beter onderhoudbaar mediaplatform.',
         ],
       },
       {
-        company: '4NET',
+        company: '4net Interactive (Conclusion)',
         role: 'Frontend Developer',
         duration: 'nov 2021 - mrt 2022',
-        location: 'Driebergen-Zeist, NL',
+        location: 'Driebergen-Rijsenburg, NL',
+        group: 'Tijdelijke contracten · 2021–2022',
         bullets: [
-          'Ontwikkelde complexe frontend-interfaces met React en Material-UI volgens WCAG-richtlijnen.',
+          'Bouwde complexe React-interfaces en een herbruikbare Material-UI componentbibliotheek volgens WCAG-toegankelijkheidsrichtlijnen.',
         ],
       },
       {
@@ -212,7 +221,7 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
         duration: 'apr 2020 - nov 2021',
         location: 'Amsterdam, NL',
         bullets: [
-          "Geoptimaliseerd social-commerce platform met React/Next.js en Node.js/TypeScript REST-API's.",
+          "Schaalde een social-commerceplatform met React/Next.js en bouwde Node.js/TypeScript REST-API's en microservices.",
         ],
       },
     ],

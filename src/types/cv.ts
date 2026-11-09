@@ -8,6 +8,7 @@ export interface PersonalInfo {
   linkedinUsername: string;
   github: string;
   githubUsername: string;
+  portfolio?: string;
 }
 
 export interface Experience {
@@ -16,6 +17,7 @@ export interface Experience {
   duration: string;
   location: string;
   bullets: string[];
+  group?: string;
 }
 
 export interface Education {
@@ -56,7 +58,7 @@ export interface CvData {
 
 export type AccentColor = 'cyan' | 'violet' | 'emerald' | 'amber' | 'rose';
 
-export type Template = 'neo-minimal' | 'dark-tech' | 'creative-glass';
+export type Template = 'neo-minimal' | 'dark-tech' | 'creative-glass' | 'ats';
 
 export type FontFamily = 'sans' | 'serif' | 'mono';
 

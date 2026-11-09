@@ -93,10 +93,7 @@ export function NeoMinimalTemplate({
       </div>
 
       <div className="border-b border-slate-200 py-3 dark:border-slate-800">
-        <SectionHeader
-          title="Executive Abstract"
-          accentClass={colors.primary}
-        />
+        <SectionHeader title="Summary" accentClass={colors.primary} />
         <p className="text-justify text-xs leading-relaxed text-slate-700 dark:text-slate-300">
           {cvData.profile}
         </p>
@@ -131,7 +128,7 @@ export function NeoMinimalTemplate({
           accentClass={colors.primary}
         />
         <div className="space-y-3">
-          {cvData.experience.slice(0, 4).map((job) => (
+          {cvData.experience.slice(0, 4).map((job, index, jobs) => (
             <ExperienceItem
               key={job.company + job.duration}
               role={job.role}
@@ -140,6 +137,11 @@ export function NeoMinimalTemplate({
               bullets={job.bullets}
               accentBgClass={colors.bg}
               isTimeline
+              groupHeader={
+                job.group && job.group !== jobs[index - 1]?.group
+                  ? job.group
+                  : undefined
+              }
             />
           ))}
         </div>

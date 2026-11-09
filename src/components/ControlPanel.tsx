@@ -27,6 +27,7 @@ const templateOptions: { key: Template; label: string }[] = [
   { key: 'neo-minimal', label: 'الحد الأدنى (Minimal)' },
   { key: 'dark-tech', label: 'المظهر المظلم (Dark)' },
   { key: 'creative-glass', label: 'الإبداعي (Glass)' },
+  { key: 'ats', label: 'ATS (نص بسيط)' },
 ];
 
 export function ControlPanel({
