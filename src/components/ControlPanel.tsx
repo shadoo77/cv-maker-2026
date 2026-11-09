@@ -53,7 +53,7 @@ export function ControlPanel({
       <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-4 xl:flex-row">
         <div className="flex w-full items-center justify-between gap-3 xl:w-auto xl:justify-start">
           <div className="flex items-center gap-3">
-            <div className="rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 p-2 text-white shadow-lg shadow-cyan-500/20">
+            <div className="rounded-xl bg-linear-to-br from-cyan-500 to-blue-600 p-2 text-white shadow-lg shadow-cyan-500/20">
               <Sparkles className="h-6 w-6 animate-pulse" />
             </div>
             <div>
@@ -152,7 +152,7 @@ export function ControlPanel({
 
           <button
             onClick={onPrint}
-            className="flex transform items-center gap-2 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-600 px-4 py-2 text-xs font-black text-slate-950 shadow-lg shadow-emerald-500/20 transition-all hover:from-emerald-400 hover:to-teal-500 active:scale-95"
+            className="flex transform items-center gap-2 rounded-lg bg-linear-to-r from-emerald-500 to-teal-600 px-4 py-2 text-xs font-black text-slate-950 shadow-lg shadow-emerald-500/20 transition-all hover:from-emerald-400 hover:to-teal-500 active:scale-95"
           >
             <Printer className="h-4 w-4" />
             تصدير وحفظ PDF

@@ -78,7 +78,7 @@ export default function App() {
         onPrint={handlePrint}
       />
 
-      <div className="flex items-center justify-center gap-2 border-b border-cyan-500/10 bg-gradient-to-r from-cyan-950/25 to-blue-950/25 px-4 py-2 text-center text-xs text-cyan-600 dark:text-cyan-300 print:hidden">
+      <div className="flex items-center justify-center gap-2 border-b border-cyan-500/10 bg-linear-to-r from-cyan-950/25 to-blue-950/25 px-4 py-2 text-center text-xs text-cyan-600 dark:text-cyan-300 print:hidden">
         <span>✨</span>
         <span>
           <strong>تم حل مشكلة تصدير الـ PDF بالكامل!</strong> السيرة الذاتية
@@ -88,9 +88,7 @@ export default function App() {
       </div>
 
       <main className="cv-sheet-container flex grow justify-center px-4 py-6 print:p-0">
-        <div className="cv-container-print">
-          {renderTemplate()}
-        </div>
+        <div className="cv-container-print">{renderTemplate()}</div>
       </main>
     </div>
   );
