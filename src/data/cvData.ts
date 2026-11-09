@@ -121,7 +121,7 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
     languagesHeader: 'Languages',
     languages: [
       { lang: 'English', level: 'Professional / Fluent' },
-      { lang: 'Dutch', level: 'Conversational' },
+      { lang: 'Dutch', level: 'Intermediate (B1–B2)' },
       { lang: 'Arabic', level: 'Native' },
     ],
     interestsHeader: 'Interests',
@@ -249,7 +249,7 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
     languagesHeader: 'Talen',
     languages: [
       { lang: 'Engels', level: 'Vloeiend / Professioneel' },
-      { lang: 'Nederlands', level: 'Gespreksvaardig' },
+      { lang: 'Nederlands', level: 'Gemiddeld (B1–B2)' },
       { lang: 'Arabisch', level: 'Moedertaal' },
     ],
     interestsHeader: 'Interesses',
