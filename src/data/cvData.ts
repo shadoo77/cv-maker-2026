@@ -15,7 +15,7 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
       linkedinUsername: 'shadi-amr',
       github: 'https://github.com/shadoo77',
       githubUsername: 'shadoo77',
-      portfolio: '',
+      portfolio: 'https://shadi-omar-portfolio.vercel.app',
     },
     profile:
       'Frontend and full-stack developer with 6+ years building React and Next.js products. At This is Development I own frontend architecture for client platforms built on Next.js, TypeScript and Tailwind, with Laravel/Inertia back ends. I introduced AI-assisted workflows that cut feature delivery time by roughly 40%, and led technical SEO and performance work that improved organic visibility and conversion. I work end-to-end from design handoff to production and own the technical decisions that keep those platforms fast and maintainable.',
@@ -143,7 +143,7 @@ export const cvDataTranslations: Record<'en' | 'nl', CvData> = {
       linkedinUsername: 'shadi-amr',
       github: 'https://github.com/shadoo77',
       githubUsername: 'shadoo77',
-      portfolio: '',
+      portfolio: 'https://shadi-omar-portfolio.vercel.app',
     },
     profile:
       'Frontend- en full-stack developer met 6+ jaar ervaring in React en Next.js. Bij This is Development ben ik verantwoordelijk voor de frontend-architectuur van klantplatformen op Next.js, TypeScript en Tailwind, met Laravel/Inertia back-ends. Ik introduceerde AI-ondersteunde workflows die de featurelevertijd met circa 40% verkortten, en leidde technische SEO- en performance-trajecten die de organische zichtbaarheid en conversie verbeterden. Ik werk end-to-end van designoplevering tot productie en neem de technische beslissingen die deze platformen snel en onderhoudbaar houden.',

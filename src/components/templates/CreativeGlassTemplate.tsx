@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { MapPin, Phone, Mail, GraduationCap } from 'lucide-react';
+import { MapPin, Phone, Mail, GraduationCap, Globe } from 'lucide-react';
 import type { CvData, ColorClasses } from '@/types/cv';
 import {
   SectionHeader,
@@ -72,6 +72,17 @@ export function CreativeGlassTemplate({
             <LinkedinIcon className="h-3 w-3 text-cyan-500 dark:text-cyan-400" />
             <span>{cvData.personalInfo.linkedinUsername}</span>
           </a>
+          {cvData.personalInfo.portfolio && (
+            <a
+              href={cvData.personalInfo.portfolio}
+              target="_blank"
+              rel="noreferrer"
+              className="flex items-center gap-1.5 rounded-full border border-slate-200 bg-slate-50 px-2.5 py-0.5 transition-all hover:text-slate-900 dark:border-slate-800 dark:bg-slate-950 dark:hover:text-white"
+            >
+              <Globe className="h-3 w-3 text-slate-500 dark:text-slate-400" />
+              <span>{cvData.personalInfo.portfolio}</span>
+            </a>
+          )}
         </div>
       </div>
 

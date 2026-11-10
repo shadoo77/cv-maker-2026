@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail } from 'lucide-react';
+import { MapPin, Phone, Mail, Globe } from 'lucide-react';
 import type { CvData, ColorClasses } from '@/types/cv';
 import {
   SectionHeader,
@@ -89,6 +89,19 @@ export function DarkTechTemplate({
                   {cvData.personalInfo.githubUsername}
                 </a>
               </div>
+              {cvData.personalInfo.portfolio && (
+                <div className="flex items-center gap-2 text-slate-600 dark:text-slate-400">
+                  <Globe className="h-3 w-3 flex-shrink-0 text-slate-500 dark:text-slate-400" />
+                  <a
+                    href={cvData.personalInfo.portfolio}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="truncate hover:underline"
+                  >
+                    {cvData.personalInfo.portfolio}
+                  </a>
+                </div>
+              )}
             </div>
           </div>
 

@@ -1,4 +1,4 @@
-import { Phone, Mail } from 'lucide-react';
+import { Phone, Mail, Globe } from 'lucide-react';
 import type { CvData, ColorClasses } from '@/types/cv';
 import {
   SectionHeader,
@@ -88,6 +88,19 @@ export function NeoMinimalTemplate({
                 github.com/{cvData.personalInfo.githubUsername}
               </span>
             </a>
+            {cvData.personalInfo.portfolio && (
+              <a
+                href={cvData.personalInfo.portfolio}
+                target="_blank"
+                rel="noreferrer"
+                className={`flex items-center gap-1.5 transition-colors ${colors.textHover}`}
+              >
+                <Globe className="h-3 w-3 text-slate-500 dark:text-slate-400" />
+                <span className="hover:underline">
+                  {cvData.personalInfo.portfolio}
+                </span>
+              </a>
+            )}
           </div>
         </div>
       </div>
